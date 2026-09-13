@@ -1,3 +1,8 @@
+library(jsonlite); library(purrr); library(stringr); library(ggplot2)
+dir.create("data", showWarnings = FALSE)
+dir.create("plots", showWarnings = FALSE)
+
+
 animalShelterData <- 
   jsonlite::fromJSON("https://www.dropbox.com/s/jew0opl6emhnw8o/animal_shelter.json?dl=1")
 animalShelterData
@@ -93,3 +98,17 @@ new_taipei_obo[113:117] ->new_taipei_eachyear[1:5]
 
 
 #109-110年 加總
+
+
+nrow(df_animalShelter)
+sort(table(breed), decreasing = TRUE) |> head(5)
+sort(table(color), decreasing = TRUE) |> head(5)
+table(fac_bodyshape)
+table(age)
+sort(table(findLocation), decreasing = TRUE) |> head(5)
+
+
+
+
+
+
