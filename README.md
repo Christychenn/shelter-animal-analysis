@@ -1,11 +1,10 @@
-# New Taipei City Shelter Animals: Who Is Waiting, and How Has It Changed?
+# New Taipei City Shelter Animals
 
 An individual final project for *Programming for Data Science I* (National Taipei
-University, Spring 2022, taught by Dr. Mau-Ting Lin). I volunteered at the Banqiao
-Animal Shelter at the time, and wanted to understand two things:
+University, taught by Dr. Mau-Ting Lin). 
+I volunteered at the Banqiao Animal Shelter at the time, and wanted to understand two things:
 
-1. **Who is waiting for adoption right now?** A profile of 1,192 animals listed on
-   New Taipei City's adoption website.
+1. **What types of animals are most common in shelters? ** 
 2. **How has the shelter population changed over time?** A trend analysis of
    intake, adoption, and euthanasia from 2008 to 2019, using government open data.
 
@@ -23,7 +22,7 @@ Animal Shelter at the time, and wanted to understand two things:
 ### Course-provided code
 Each listing stores all of its attributes in one free-text string
 (e.g. `品種：混種 毛色：黑色 體型：中型 年齡：幼犬3個月 ...`). The code that turns
-these strings into a data frame (the second chunk in `analysis.Rmd`) is adapted
+these strings into a data frame (the second chunk in `final.rmd`) is adapted
 from the instructor's
 [in-class demonstration](https://github.com/tpemartin/110-2-R/issues/14).
 
@@ -102,7 +101,7 @@ to see every code chunk with its output and charts, without installing R.
 
 ## Running it
 
-1. Open `analysis.Rmd` in RStudio
+1. Open `final.rmd` in RStudio
 2. Install the packages:
    ```r
    install.packages(c("jsonlite", "purrr", "stringr", "ggplot2", "reshape2"))
@@ -117,7 +116,7 @@ Notes:
 
 ## Files
 
-- `analysis.Rmd`: all code for both parts
+- `final.rmd`: all code for both parts
 - `final.nb.html`: the rendered R Notebook from 2022, with code, output, and charts
 - `plots/`: charts exported from the notebook
 
