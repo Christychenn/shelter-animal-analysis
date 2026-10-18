@@ -1,10 +1,11 @@
-# New Taipei City Shelter Animals
+# New Taipei City Shelter Dogs: Who Is Waiting, and How Has It Changed?
 
 An individual final project for *Programming for Data Science I* (National Taipei
-University, taught by Dr. Mau-Ting Lin). 
-I volunteered at the Banqiao Animal Shelter at the time, and wanted to understand two things:
+University, Spring 2022, taught by Dr. Mau-Ting Lin). I volunteered at the Banqiao
+Animal Shelter at the time, and wanted to understand two things:
 
-1. **What types of animals are most common in shelters? ** 
+1. **What types of dogs are most common in shelters?** A profile of 1,192 dogs listed on
+   New Taipei City's adoption website.
 2. **How has the shelter population changed over time?** A trend analysis of
    intake, adoption, and euthanasia from 2008 to 2019, using government open data.
 
@@ -14,15 +15,16 @@ I volunteered at the Banqiao Animal Shelter at the time, and wanted to understan
 
 | Dataset | Source | What it contains |
 |---|---|---|
-| Adoption listings (snapshot, April 2022) | [New Taipei City adoption website](https://act-adopt.ahiqo.ntpc.gov.tw/), collected by the instructor's [web crawler](https://github.com/tpemartin/110-2-R/blob/main/shelter_crawling.R) and shared with the class as [JSON](https://github.com/tpemartin/110-2-R/blob/main/animal_shelter.json) | 1,192 animals, each with a free-text description and a photo |
+| Adoption listings (snapshot, April 2022) | [New Taipei City adoption website](https://act-adopt.ahiqo.ntpc.gov.tw/), collected by the instructor's [web crawler](https://github.com/tpemartin/110-2-R/blob/main/shelter_crawling.R) and shared with the class as [JSON](https://github.com/tpemartin/110-2-R/blob/main/animal_shelter.json) | 1,192 dogs, each with a free-text description and a photo |
 | Shelter statistics, New Taipei City | Council of Agriculture open data API (`data.coa.gov.tw`) | Yearly and monthly counts of animals taken in, adopted, and euthanized |
 
-## Part 1: Who is waiting for adoption
+## Part 1: What types of dogs are most common in shelters
 
 ### Course-provided code
 Each listing stores all of its attributes in one free-text string
 (e.g. `品種：混種 毛色：黑色 體型：中型 年齡：幼犬3個月 ...`). The code that turns
-these strings into a data frame (the second chunk in `final.rmd`) is adapted
+these strings into a data frame (the chunks in `final.Rmd` that import the JSON and build
+`df_animalShelter`) is adapted
 from the instructor's
 [in-class demonstration](https://github.com/tpemartin/110-2-R/issues/14).
 
@@ -39,7 +41,7 @@ from the instructor's
 The population is far more uniform than I expected. Across all 1,192 listings:
 
 - 98.6% are mixed-breed (1,175 of 1,192); only 17 are purebred
-- 83.7% are medium-sized; small and large animals make up 10.8% and 5.4%
+- 83.7% are medium-sized; small and large dogs make up 10.8% and 5.4%
 - 87.6% are adults; only 148 are young
 - Just over half are black (51.7%), with tabby a distant second (11.9%)
 - Five districts (Zhonghe, Tamsui, Linkou, Tucheng, and Banqiao) account for
@@ -50,6 +52,17 @@ The population is far more uniform than I expected. Across all 1,192 listings:
 | Coat color | Body size | Pickup district |
 |---|---|---|
 | ![Coat color](plots/coat_color.png) | ![Body size](plots/body_size.png) | ![Pickup district](plots/pickup_district.png) |
+
+### Putting the traits together: the black dog on the street
+Each chart on its own shows the most common value of one trait. Putting the most
+common values together (mixed-breed, medium-sized, adult, black) describes a dog
+most people in Taiwan would recognize: the black street dog.
+
+![A typical shelter dog: mixed-breed, medium-sized, adult, black](plots/typical_black_dog.png)
+
+This profile is not just a coincidence of averages. **491 of the 1,192 dogs
+(41.2%) match all four traits at once.** Many of the dogs waiting for a
+home in New Taipei City look like the dogs people walk past every day.
 
 ## Part 2: How the shelter population has changed (2008–2019)
 
@@ -101,7 +114,7 @@ to see every code chunk with its output and charts, without installing R.
 
 ## Running it
 
-1. Open `final.rmd` in RStudio
+1. Open `final.Rmd` in RStudio
 2. Install the packages:
    ```r
    install.packages(c("jsonlite", "purrr", "stringr", "ggplot2", "reshape2"))
@@ -116,13 +129,13 @@ Notes:
 
 ## Files
 
-- `final.rmd`: all code for both parts
+- `final.Rmd`: all code for both parts
 - `final.nb.html`: the rendered R Notebook from 2022, with code, output, and charts
 - `plots/`: charts exported from the notebook
 
 ## Project history
 
 - [Interim submission](https://github.com/tpemartin/110-2-R/issues/20), June 15, 2022
-- [Final presentation recording](https://vimeo.com/725617127) (in Mandarin), June 30, 2022
+- [Final presentation recording](https://vimeo.com/725702797?fl=tl&fe=ec) (in Mandarin), June 30, 2022
 - The code in this repository is the final 2022 version. This README was written in
   2026 to document the project.
