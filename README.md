@@ -90,6 +90,11 @@ were left out rather than mixed with a different kind of figure).
 I combined intake, adoption, and euthanasia counts into one table, reshaped it from
 wide to long format with `reshape2::melt()`, and plotted the three series together.
 
+`accept_num`: The number of animals entering shelters
+`adopt_num`: The number of public adoptions
+`end_num`: The number of euthanasia cases
+
+
 ![Shelter intake, adoption and euthanasia in New Taipei City, 2008–2019](plots/trend_2008_2019.png)
 
 - **Intake fell by two-thirds**, from 20,239 animals in 2008 to 6,679 in 2019
