@@ -1,4 +1,4 @@
-# New Taipei City Shelter Dogs: Who Is Waiting, and How Has It Changed?
+# New Taipei City Shelter Dogs
 
 An individual final project for *Programming for Data Science I* (National Taipei
 University, Spring 2022, taught by Dr. Mau-Ting Lin). I volunteered at the Banqiao
